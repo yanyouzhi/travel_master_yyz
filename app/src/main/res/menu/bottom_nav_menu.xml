@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/baseline_home_24_unclick"
+        android:iconTint="@color/nav_item_selector"
+        android:title="首页"/>
+    <item
+        android:id="@+id/nav_spots"
+        android:iconTint="@color/nav_item_selector"
+        android:icon="@drawable/baseline_account_balance_24_unclick"
+        android:title="景点"/>
+    <item
+        android:id="@+id/nav_community"
+        android:iconTint="@color/nav_item_selector"
+        android:icon="@drawable/baseline_groups_24_unclick"
+        android:title="社区"/>
+    <item
+        android:id="@+id/nav_mine"
+        android:iconTint="@color/nav_item_selector"
+        android:icon="@drawable/baseline_person_24_unclick"
+        android:title="我的"/>
+</menu>

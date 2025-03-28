@@ -1,7 +1,10 @@
 package com.example.travel_master_yyz;
 
+import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,12 +30,15 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     private TextView tvGetVerificationCode, tvLogin;
     private Button btnReset;
     private ApiService apiService;
+    private int bool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
         apiService = RetrofitClient.getInstance().create(ApiService.class);
+        Intent intent = getIntent();
+        bool = intent.getIntExtra("isChange",2);
         init();
     }
 
@@ -45,6 +51,13 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         tvLogin = findViewById(R.id.tv_login);
         btnReset = findViewById(R.id.btn_register);
         tilPasswordLayout = findViewById(R.id.til_passwordLayout);
+
+        if(bool == 1){
+            tvLogin.setVisibility(View.VISIBLE);
+        }else{
+            tvLogin.setVisibility(View.GONE);
+        }
+
         tilConfirmPasswordLayout = findViewById(R.id.til_confirmPasswordLayout);
 
         tvGetVerificationCode.setOnClickListener(v -> sendVerificationCode());
@@ -67,6 +80,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         }
 
         apiService.sendVerifyCode(email).enqueue(new Callback<ApiResponse>() {
+
             @Override
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -82,6 +96,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ApiResponse> call, Throwable t) {
+                Log.i("tahh",t.getMessage());
                 Toast.makeText(ForgetPasswordActivity.this, "网络错误", Toast.LENGTH_SHORT).show();
             }
         });

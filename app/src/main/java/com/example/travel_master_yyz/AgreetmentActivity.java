@@ -23,7 +23,7 @@ public class AgreetmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agreetment);
-        content = findViewById(R.id.tv_content);
+        content = findViewById(R.id.tv_content_1);
         toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
         title = findViewById(R.id.tv_title);

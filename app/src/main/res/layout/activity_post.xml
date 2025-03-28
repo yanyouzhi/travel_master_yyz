@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".PostActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        >
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/gray"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="图文"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:layout_marginEnd="15dp"
+            android:id="@+id/tv_publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="发布"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_light" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!-- 输入框 -->
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="分享你的想法..."
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:background="@android:color/transparent"/>
+
+
+    <!-- 是否同时分享到社区 -->
+    <CheckBox
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:id="@+id/cb_share_community"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="同时分享到社区"/>
+    <!-- 选择图片 -->
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_add_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_add_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#CCC9C9"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_add_24"/>
+    </LinearLayout>
+
+</LinearLayout>

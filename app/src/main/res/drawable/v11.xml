@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="72dp"
+    android:viewportWidth="1280"
+    android:viewportHeight="720">
+
+    <!-- 背景颜色 -->
+    <path
+        android:fillColor="#FF0000"
+        android:pathData="M0,0h1280v720h-1280z" />
+
+    <!-- 右上角的笑脸 -->
+    <group
+        android:translateX="1100"
+        android:translateY="100"
+        android:scaleX="1.2"
+        android:scaleY="1.2">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M0,0a100,100 0 1,1 200,0a100,100 0 1,1 -200,0z"
+            android:strokeWidth="10"
+            android:strokeColor="#FFFFFF"
+            android:fillAlpha="0.1" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M40,60l20,-30m50,30l-20,-30"
+            android:strokeWidth="10"
+            android:strokeColor="#FFFFFF" />
+    </group>
+
+    <!-- 左下角的笑脸 -->
+    <group
+        android:translateX="150"
+        android:translateY="600"
+        android:scaleX="1.5"
+        android:scaleY="1.5">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M0,0a100,100 0 1,1 200,0a100,100 0 1,1 -200,0z"
+            android:strokeWidth="10"
+            android:strokeColor="#FFFFFF"
+            android:fillAlpha="0.1" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M40,60l20,-30m50,30l-20,-30"
+            android:strokeWidth="10"
+            android:strokeColor="#FFFFFF" />
+    </group>
+
+</vector>

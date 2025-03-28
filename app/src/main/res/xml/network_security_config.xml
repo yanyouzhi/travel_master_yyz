@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">lmoflife.com</domain>
+        <domain includeSubdomains="true">192.168.236.224</domain>
+        <domain includeSubdomains="true">192.168.236.202</domain>
+        <domain includeSubdomains="true">192.168.206.71</domain>
+    </domain-config>
+</network-security-config>

@@ -1,4 +1,4 @@
-package com.example.travel_master_yyz.Dao;
+package com.example.travel_master_yyz.dao;
 
 public class UserData {
     private String id;

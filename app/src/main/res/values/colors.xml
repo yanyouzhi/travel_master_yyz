@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name = "comment1">#EDF4E3E7</color>
+    <color name = "comment2">#EDECE3F4</color>
+    <color name = "comment3">#EDE3EDF4</color>
+    <color name = "comment4">#EDE3F1F4</color>
+    <color name = "comment5">#EDE3F4E5</color>
+    <color name = "comment6">#EDF4F2E3</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>

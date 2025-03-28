@@ -1,6 +1,6 @@
 package com.example.travel_master_yyz.api;
 
-import com.example.travel_master_yyz.Dao.UserData;
+import com.example.travel_master_yyz.dao.UserData;
 
 public class LoginResponse {
     private int code;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 点赞状态（选中） -->
+    <item android:drawable="@drawable/send_shape"
+        android:state_selected="true"/>
+    <!-- 默认状态（未点赞） -->
+    <item android:drawable="@drawable/send_shape_gray"/>
+</selector>

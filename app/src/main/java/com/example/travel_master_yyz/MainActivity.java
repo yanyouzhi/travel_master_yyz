@@ -3,17 +3,16 @@ package com.example.travel_master_yyz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
-import android.view.WindowInsets;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.example.travel_master_yyz.Dao.UserData;
+import com.example.travel_master_yyz.dao.SessionManager;
+import com.example.travel_master_yyz.dao.UserData;
 import com.example.travel_master_yyz.api.ApiService;
 import com.example.travel_master_yyz.api.LoginRequest;
 import com.example.travel_master_yyz.api.LoginResponse;
@@ -161,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ForgetPasswordActivity.class);
+                intent.putExtra("isChange", 1);
                 startActivity(intent);
             }
         });
@@ -198,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                         intent.putExtra("USER_ID", userData.getId());
                         intent.putExtra("TOKEN", userData.getToken());
+                        SessionManager sessionManager = new SessionManager(MainActivity.this);
+                        sessionManager.saveUserSession(userData.getId(), userData.getToken());
                         startActivity(intent);
                         finish();
                     } else {

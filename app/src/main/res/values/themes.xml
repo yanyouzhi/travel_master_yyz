@@ -2,7 +2,6 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Travel_Master_YYZ" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <style name="Theme.Travel_Master_YYZ" parent="Base.Theme.Travel_Master_YYZ" />
@@ -13,4 +12,11 @@
         <item name="android:fitsSystemWindows">true</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+
+    <style name="CustomRatingBar">
+        <item name="android:progressTint">#FFEB3B</item>
+        <item name="android:progressBackgroundTint">@color/gray</item>
+        <item name="android:secondaryProgressTint">#FFEB3B</item>
+    </style>
+
 </resources>

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.travel_master_yyz.api.ApiResponse;
 import com.example.travel_master_yyz.api.ApiService;
 import com.example.travel_master_yyz.api.RegisterRequest;
+import com.example.travel_master_yyz.api.RetrofitClient;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import androidx.annotation.Nullable;
@@ -34,11 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         init();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://lmoflife.com:8088/")  // API Base URL
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        apiService = retrofit.create(ApiService.class);
+        apiService = RetrofitClient.getInstance().create(ApiService.class);
         tvGetVerificationCode.setOnClickListener(view -> sendVerifyCode());
         btnRegister.setOnClickListener(view -> registerUser());
         passwordLayout.setEndIconOnClickListener(view -> togglePasswordVisibility());
