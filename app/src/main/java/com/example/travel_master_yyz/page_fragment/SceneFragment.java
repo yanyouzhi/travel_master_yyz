@@ -41,7 +41,7 @@ public class SceneFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
+        loadLandscapes();
     }
 
     @Override
@@ -71,7 +71,7 @@ public class SceneFragment extends Fragment {
         // 显示加载动画
         progressBar.setVisibility(View.VISIBLE);
         ApiService apiService = RetrofitClient.getInstance().create(ApiService.class);
-        Call<LandscapeResponse> call = apiService.getLandscapes(token, "1", "20", id, "1");
+        Call<LandscapeResponse> call = apiService.getLandscapes(token, "1", "20", id, "");
 
         call.enqueue(new Callback<LandscapeResponse>() {
             @Override

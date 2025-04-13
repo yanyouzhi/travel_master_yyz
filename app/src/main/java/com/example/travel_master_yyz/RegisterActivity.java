@@ -22,7 +22,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends BaseActivity {
     private TextInputEditText inputEmail, inputPhone, inputVerifyCode, inputPassword, inputConfirmPassword;
     private TextView tvGetVerificationCode,backToLogin,tv_agreement,tv_policy;
     private Button btnRegister;

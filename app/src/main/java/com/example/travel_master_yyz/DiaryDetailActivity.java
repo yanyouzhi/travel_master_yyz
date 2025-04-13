@@ -32,14 +32,15 @@ import com.google.gson.Gson;
 import java.util.Collections;
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DiaryDetailActivity extends AppCompatActivity {
+public class DiaryDetailActivity extends BaseActivity {
 
     private TextView tvContent, tvLikeDetail, tvSend,tvTime,tvCommentNum,tvName;
-    private ImageView ivImage, imgLike,imgAva;
+    private ImageView ivImage, imgLike,imgAva,imgDel;
     private EditText etComment;
     private String diaryId, diaryUid, token,postUerId,loginId;
     private boolean isLiked = false;
@@ -85,6 +86,13 @@ public class DiaryDetailActivity extends AppCompatActivity {
             }
         });
 
+        imgDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delD();
+            }
+        });
+
         jumpUserInfo();
     }
 
@@ -105,6 +113,7 @@ public class DiaryDetailActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         commentAdapter = new CommentAdapter();
         recyclerView.setAdapter(commentAdapter);
+        imgDel = findViewById(R.id.img_del);
     }
 
     private void jumpUserInfo(){
@@ -120,7 +129,7 @@ public class DiaryDetailActivity extends AppCompatActivity {
 
     // todo:获取动态详情
     private void fetchDiaryDetail() {
-        diaryApi.getDiaryDetail(token, diaryId, diaryUid).enqueue(new Callback<DiaryDetailResponse>() {
+        diaryApi.getDiaryDetail(token, diaryId, loginId).enqueue(new Callback<DiaryDetailResponse>() {
             @Override
             public void onResponse(Call<DiaryDetailResponse> call, Response<DiaryDetailResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -130,7 +139,7 @@ public class DiaryDetailActivity extends AppCompatActivity {
                     tvTime.setText(data.getTime()); // 发布时间
                     tvContent.setText(data.getDescription()); // 动态内容
                     tvLikeDetail.setText(String.valueOf(data.getPraise())); // 点赞数
-                    tvCommentNum.setText("全部评论(" + String.valueOf(data.getComment())+")"); //评论数
+                    tvCommentNum.setText(getString(R.string.tv_diary_detail_2)+"(" + String.valueOf(data.getComment())+")"); //评论数
                     commentNum = data.getComment();
                     postUerId = data.getUid();
                     tvName.setText(data.getName());
@@ -139,6 +148,21 @@ public class DiaryDetailActivity extends AppCompatActivity {
                                 .load(data.getPhoto())
                                 .transform(new CircleCrop()) // 设置圆形
                                 .into(imgAva);
+                    }else{
+                        Glide.with(DiaryDetailActivity.this)
+                                .load("https://yanyouzhi8758.oss-cn-guangzhou.aliyuncs.com/%E9%BB%91%E7%8C%AB.jpg")
+                                .transform(new CircleCrop())
+                                .into(imgAva);
+                    }
+                    Log.i("json", new Gson().toJson(response.body()));
+
+
+
+                    Log.i("string",loginId + "==" + postUerId);
+                    if(loginId.equals(postUerId)){
+                        imgDel.setVisibility(View.VISIBLE);
+                    }else{
+                        imgDel.setVisibility(View.GONE);
                     }
 
 
@@ -153,6 +177,7 @@ public class DiaryDetailActivity extends AppCompatActivity {
                     }
 
                     // 处理点赞状态
+                    Log.i("sss",String.valueOf(data.getPraise_my()));
                     isLiked = data.getPraise_my() > 0; // 获取点赞状态（0 = 未点赞，>0 = 已点赞）
                     updateLikeUI();
                 } else {
@@ -250,6 +275,25 @@ public class DiaryDetailActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<BaseResponse> call, Throwable t) {
                         Log.e("Error", "取消点赞失败：" + t.getMessage());
+                    }
+                });
+    }
+
+
+    private void delD() {
+        RetrofitClient.getInstance().create(ApiService.class)
+                .delDiary(token,diaryId)
+                .enqueue(new Callback<BaseResponse>() {
+                    @Override
+                    public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
+                        if (response.body() != null && response.body().getCode() == 200) {
+                            finish();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<BaseResponse> call, Throwable t) {
+                        Log.e("Error", "删除失败：" + t.getMessage());
                     }
                 });
     }

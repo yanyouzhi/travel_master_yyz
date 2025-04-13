@@ -2,6 +2,7 @@ package com.example.travel_master_yyz.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,7 +49,7 @@ public class UserInfoDiaryAdapter extends RecyclerView.Adapter<UserInfoDiaryAdap
         holder.tvComment.setText(String.valueOf(diary.getComment()));
 
         // 加载文章图片
-        if (!diary.getImage().isEmpty()) {
+        if (!TextUtils.isEmpty(diary.getImage())) {
             Glide.with(context)
                     .load(diary.getImage())
                     .into(holder.imgDiary);

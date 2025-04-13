@@ -11,6 +11,7 @@ public class UserResponse {
 
     public static class UserData {
         private String name;
+        private String login;
         private int collect_landscape_number;
         private String occupation;
         private String description;
@@ -23,6 +24,15 @@ public class UserResponse {
         private String phone;
         private int praise;
         private String time;
+        private String id;
+
+        public String getLogin() {
+            return login;
+        }
+
+        public String getId() {
+            return id;
+        }
 
         public String getTime() {
             return time;

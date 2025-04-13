@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SearchActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/actv_search"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="8"
+            android:background="@drawable/shape_search"
+            android:drawableLeft="@drawable/ic_baseline_search_24"
+            android:drawablePadding="5dp"
+            android:dropDownWidth="match_parent"
+            android:dropDownHeight="230dp"
+            android:dropDownVerticalOffset="3dp"
+            android:ems="10"
+            android:hint="@string/tv_search_2"
+            android:paddingStart="12dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/red"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/send"
+            android:paddingVertical="7dp"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/send_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_search_1"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/red"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="5dp"
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -23,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SecurityActivity extends AppCompatActivity {
+public class SecurityActivity extends BaseActivity {
 
     TextView phone,email,time,loginOut;
     String token,id;
@@ -69,6 +69,7 @@ public class SecurityActivity extends AppCompatActivity {
                 sessionManager.clearSession();
                 Intent intent = new Intent(SecurityActivity.this,MainActivity.class);
                 startActivity(intent);
+                finishAffinity();
             }
         });
 
@@ -125,7 +126,7 @@ public class SecurityActivity extends AppCompatActivity {
     private void updateUI(UserResponse.UserData userData) {
         phone.setText( maskMiddle(userData.getPhone(), 3, 7));
         email.setText(maskEmail(userData.getEmail()));
-        time.setText("上次登录时间："+ userData.getTime());
+        time.setText(getString(R.string.tv_se_9) +": "+ userData.getLogin());
     }
 
 }

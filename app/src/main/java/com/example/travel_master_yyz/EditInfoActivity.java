@@ -2,8 +2,12 @@ package com.example.travel_master_yyz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -42,8 +46,9 @@ import retrofit2.Response;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;
 
-public class EditInfoActivity extends AppCompatActivity {
+public class EditInfoActivity extends BaseActivity {
     private EditText edtUserName, edtDesc, edtJob, edtLocate, edtPhone;
+    private static final int REQUEST_IMAGE_PICK = 1;
     private ImageView imgEditAva;
     private TextView tvMan, tvWoman;
     private Button btnSave;
@@ -120,6 +125,11 @@ public class EditInfoActivity extends AppCompatActivity {
                     .load(userData.getPhoto())
                     .transform(new CircleCrop()) // 设置圆形
                     .into(imgEditAva);
+        }else{
+            Glide.with(this)
+                    .load("https://yanyouzhi8758.oss-cn-guangzhou.aliyuncs.com/%E9%BB%91%E7%8C%AB.jpg")
+                    .transform(new CircleCrop())
+                    .into(imgEditAva);
         }
     }
 
@@ -175,6 +185,7 @@ public class EditInfoActivity extends AppCompatActivity {
 
                             // 转换为 Base64
                             base64Photo = encodeImageToBase64(bitmap);
+                            Log.i("yyz",base64Photo);
                         }
 
                         @Override
@@ -195,13 +206,14 @@ public class EditInfoActivity extends AppCompatActivity {
 
     private void saveUserInfo() {
         String name = edtUserName.getText().toString().trim();
-        Log.i("getString",name);
+        Log.i("yyz",name);
         String addr = edtLocate.getText().toString().trim();
         String description = edtDesc.getText().toString().trim();
         String occupation = edtJob.getText().toString().trim();
-        Log.i("getString",occupation);
+        Log.i("yyz",occupation);
         String contact = edtPhone.getText().toString().trim();
 
+        Log.i("yyz",base64Photo);
         UserInfoRequest request = new UserInfoRequest(id, name, base64Photo, selectedSex, addr, description, occupation, contact);
 
         ApiService apiService = RetrofitClient.getInstance().create(ApiService.class);

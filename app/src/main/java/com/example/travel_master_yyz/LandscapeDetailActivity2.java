@@ -31,6 +31,8 @@ import com.example.travel_master_yyz.api.LandscapeDetailData;
 import com.example.travel_master_yyz.api.LandscapeDetailResponse;
 import com.example.travel_master_yyz.api.LandscapeResponse;
 import com.example.travel_master_yyz.api.RetrofitClient;
+import com.example.travel_master_yyz.dao.LandscapeCacheHelper;
+import com.example.travel_master_yyz.dao.LandscapeCacheItem;
 import com.example.travel_master_yyz.dao.SessionManager;
 
 import java.util.ArrayList;
@@ -40,7 +42,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LandscapeDetailActivity2 extends AppCompatActivity {
+public class LandscapeDetailActivity2 extends BaseActivity {
 
 
 
@@ -158,6 +160,13 @@ public class LandscapeDetailActivity2 extends AppCompatActivity {
             public void onResponse(Call<LandscapeDetailResponse> call, Response<LandscapeDetailResponse> response) {
                 Log.d("Retrofit", "onResponse: 请求返回，线程 = " + Thread.currentThread().getName());
                 if (!isFinishing() && response.isSuccessful() && response.body() != null && response.body().getCode() == 200) {
+                    LandscapeCacheHelper helper = new LandscapeCacheHelper(LandscapeDetailActivity2.this);
+                    helper.insertLandscape(new LandscapeCacheItem(
+                            fid, uid, response.body().getData().getImage(), response.body().getData().getDescription(),
+                            0, response.body().getData().getName(), System.currentTimeMillis()
+                    ));
+
+
                     updateUI(response.body().getData());
                 } else {
                     Toast.makeText(LandscapeDetailActivity2.this, "获取数据失败", Toast.LENGTH_SHORT).show();
@@ -208,16 +217,16 @@ public class LandscapeDetailActivity2 extends AppCompatActivity {
         textViewName.setText(data.getName());
         textViewDescription.setText(data.getDescription());
         textViewPraise.setText(String.valueOf(data.getPraise()));
-        textViewScore.setText(String.valueOf(data.getAverageScore()) + " 分");
-        textViewComment.setText("全部评论("+String.valueOf(data.getComment())+")");
+        textViewScore.setText(String.valueOf(data.getAverageScore()) + " "+getString(R.string.tv_landscape_5));
+        textViewComment.setText(getString(R.string.tv_diary_detail_2)+"("+String.valueOf(data.getComment())+")");
         ratingBar.setRating(data.getAverageScore());
 
         isCollected = (data.getCollect_my() > 0);
         collect.setSelected(isCollected);
         if (isCollected) {
-            tvCollect.setText("已收藏");
+            tvCollect.setText(getString(R.string.tv_landscape_3));
         } else {
-            tvCollect.setText("收藏");
+            tvCollect.setText(getString(R.string.tv_landscape_2));
         }
 
         isPraised = (data.getPraise_my() > 0);  // 是否已点赞
@@ -233,7 +242,6 @@ public class LandscapeDetailActivity2 extends AppCompatActivity {
         if (data.getImage() != null && !data.getImage().isEmpty()) {
             Glide.with(LandscapeDetailActivity2.this)
                     .load(data.getImage())
-                    .transform(new CircleCrop()) // 设置圆形
                     .into(imageView);
         }else{
             imageView.setVisibility(View.INVISIBLE);

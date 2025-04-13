@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:background="@color/red"
         android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,9 +25,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="景点详情"
+            android:text="@string/tv_landscape_1"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
@@ -133,7 +133,7 @@
                             android:id="@+id/textViewCollect"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="收藏"
+                            android:text="@string/tv_landscape_2"
                             android:textSize="14sp"
                             android:layout_marginLeft="4dp"/>
                     </LinearLayout>
@@ -159,7 +159,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="提交评分" />
+                            android:text="@string/tv_landscape_4" />
 
                         <RatingBar
                             android:theme="@style/CustomRatingBar"
@@ -216,7 +216,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="到底了哦"
+                        android:text="@string/tv_diary_detail_5"
                         android:textColor="#E6E4E4" />
 
                 </RelativeLayout>
@@ -242,7 +242,7 @@
                 android:paddingVertical="8dp"
                 android:layout_marginStart="20dp"
                 android:textColorHint="@color/gray"
-                android:hint="说点什么..."
+                android:hint="@string/tv_diary_detail_3"
                 android:background="@drawable/search_box"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -260,7 +260,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="发送" />
+                android:text="@string/tv_diary_detail_4" />
 
         </LinearLayout>
 

@@ -2,6 +2,8 @@ package com.example.travel_master_yyz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import android.app.Activity;
@@ -12,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -21,6 +24,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.bumptech.glide.Glide;
@@ -43,13 +48,15 @@ import retrofit2.Response;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;
 
-public class PostActivity extends AppCompatActivity {
+public class PostActivity extends BaseActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
+    private static final int REQUEST_IMAGE_PICK = 1;
     private EditText etDescription;
     private ImageView ivAddImage;
     private CheckBox cbShareCommunity;
     private String imageBase64 = "";  // 存储 Base64 编码的图片
+    private String base64Photo = "";  // 用于上传的 Base64 图片
     private String token ; // 从登录获取
     private String uid ; // 从登录获取
     private TextView tvCancel,tvPublish;
@@ -62,7 +69,7 @@ public class PostActivity extends AppCompatActivity {
 
         init();
         // todo:选择图片
-        ivAddImage.setOnClickListener(v -> openGallery());
+        ivAddImage.setOnClickListener(v -> selectImageFromGallery());
 
         // 取消
         tvCancel.setOnClickListener(v -> finish());
@@ -85,9 +92,9 @@ public class PostActivity extends AppCompatActivity {
     }
 
     // todo:打开相册选择图片
-    private void openGallery() {
+    private void selectImageFromGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+        startActivityForResult(intent, 100);
     }
 
     @Override
@@ -109,7 +116,12 @@ public class PostActivity extends AppCompatActivity {
                         public void onSuccess(int index, File compressFile) {
                             // 压缩成功后，加载压缩后的图片并显示在 ImageView 中
                             Bitmap compressedBitmap = BitmapFactory.decodeFile(compressFile.getAbsolutePath());
-                            ivAddImage.setImageBitmap(compressedBitmap);
+                            //ivAddImage.setImageBitmap(compressedBitmap);
+                            // 使用 Glide 显示
+                            Glide.with(PostActivity.this)
+                                    .load(data.getData())
+                                    .into(ivAddImage);
+
 
                             // 将压缩后的图片转换为 Base64 编码
                             imageBase64 = encodeImageToBase64(compressedBitmap);
@@ -127,7 +139,7 @@ public class PostActivity extends AppCompatActivity {
     // 将 Bitmap 转换为 Base64 编码
     private String encodeImageToBase64(Bitmap bitmap) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 80, byteArrayOutputStream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 20, byteArrayOutputStream);
         byte[] byteArray = byteArrayOutputStream.toByteArray();
         return Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
@@ -143,6 +155,7 @@ public class PostActivity extends AppCompatActivity {
             return;
         }
 
+        Log.i("pto",imageBase64);
         PostRequest postRequest = new PostRequest(uid, description, imageBase64, String.valueOf(community));
         ApiService apiService = RetrofitClient.getInstance().create(ApiService.class);
 

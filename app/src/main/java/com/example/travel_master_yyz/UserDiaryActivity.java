@@ -18,7 +18,7 @@ import com.example.travel_master_yyz.view_model.CommunityViewModel;
 import com.example.travel_master_yyz.view_model.UserCommunityViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class UserDiaryActivity extends AppCompatActivity {
+public class UserDiaryActivity extends BaseActivity {
 
     private UserCommunityViewModel viewModel;
     private RecyclerView recyclerView;
@@ -48,7 +48,7 @@ public class UserDiaryActivity extends AppCompatActivity {
         SessionManager sessionManager = new SessionManager(UserDiaryActivity.this);
         id = sessionManager.getId();
         token = sessionManager.getToken();
-        if(id == search_id){
+        if(id.equals(search_id)){
             fab.setVisibility(View.VISIBLE);
         }else{
             fab.setVisibility(View.GONE);

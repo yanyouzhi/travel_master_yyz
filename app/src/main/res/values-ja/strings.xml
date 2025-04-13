@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">赤い印</string>
+
+    <string name="tv_help">ヘルプとフィードバック</string>
+    <string name="tv_help_1">お問い合わせ</string>
+    <string name="tv_help_2">ご不明な点やご意見がございましたら、以下の連絡先までお気軽にご連絡ください。心を込めて対応いたします。</string>
+    <string name="tv_help_3">メール：852849843@qq.com</string>
+    <string name="tv_help_4">電話：13660308758</string>
+    <string name="tv_help_5">私たちについて</string>
+    <string name="tv_help_6">赤い文化のためのデジタルソーシャル旅行アプリ。赤い文化スポットを推薦し、ソーシャル機能を通じてその文化を広めます</string>
+    <string name="tv_help_7">バージョン: 1.0.0</string>
+    <string name="tv_help_8">ソースコード</string>
+
+    <string name="tv_mine_1">プロフィール編集</string>
+    <string name="tv_mine_2">お気に入りスポット</string>
+    <string name="tv_mine_3">保存済みスポット</string>
+    <string name="tv_mine_4">ユーザー関係</string>
+    <string name="tv_mine_5">関係の詳細</string>
+    <string name="tv_mine_6">マイ投稿</string>
+    <string name="tv_mine_7">すべての投稿を表示</string>
+    <string name="tv_mine_8">アカウントの安全</string>
+    <string name="tv_mine_9">ヘルプとフィードバック</string>
+    <string name="tv_mine_10">システム設定</string>
+    <string name="tv_mine_11">検索履歴</string>
+    <string name="tv_mine_12">観光スポット検索履歴</string>
+
+    <string name="tv_userlist_1">フォロー中</string>
+    <string name="tv_userlist_2">フォロワー</string>
+
+    <string name="tv_diray_list">投稿リスト</string>
+
+    <string name="tv_edit_1">ニックネーム</string>
+    <string name="tv_edit_2">性別</string>
+    <string name="tv_edit_3">一言</string>
+    <string name="tv_edit_4">職業</string>
+    <string name="tv_edit_5">所在地</string>
+    <string name="tv_edit_6">連絡先</string>
+    <string name="tv_edit_7">保存</string>
+    <string name="tv_edit_8">男性</string>
+    <string name="tv_edit_9">女性</string>
+
+    <string name="tv_diary_detail_1">投稿の詳細</string>
+    <string name="tv_diary_detail_2">全てのコメント</string>
+    <string name="tv_diary_detail_3">何かを入力してください...</string>
+    <string name="tv_diary_detail_4">送信</string>
+    <string name="tv_diary_detail_5">これ以上ありません</string>
+
+    <string name="tv_userInfo_1">フォロー</string>
+    <string name="tv_userInfo_2">フォロー中</string>
+    <string name="tv_userInfo_3">投稿一覧</string>
+    <string name="tv_userInfo_4">全ての投稿</string>
+
+    <string name="tv_post_1">キャンセル</string>
+    <string name="tv_post_2">画像と文章</string>
+    <string name="tv_post_3">投稿</string>
+    <string name="tv_post_4">あなたの考えを共有しよう</string>
+    <string name="tv_post_5">コミュニティにもシェア</string>
+
+    <string name="tv_landscape_1">スポットの詳細</string>
+    <string name="tv_landscape_2">お気に入りに追加</string>
+    <string name="tv_landscape_3">お気に入り済み</string>
+    <string name="tv_landscape_4">評価を送信</string>
+    <string name="tv_landscape_5">点</string>
+
+    <string name="tv_se_1">アカウントの安全</string>
+    <string name="tv_se_2">ログインパスワード</string>
+    <string name="tv_se_3">パスワードは定期的に変更することをお勧めします</string>
+    <string name="tv_se_4">変更</string>
+    <string name="tv_se_5">携帯番号</string>
+    <string name="tv_se_6">変更</string>
+    <string name="tv_se_7">メールアカウント</string>
+    <string name="tv_se_8">セキュリティヒント</string>
+    <string name="tv_se_9">前回のログイン時間</string>
+    <string name="tv_se_10">セキュリティ状態：安全</string>
+    <string name="tv_se_11">安全のアドバイス</string>
+    <string name="tv_se_12">• 定期的にパスワードを変更してください</string>
+    <string name="tv_se_13">• 二段階認証を有効にする</string>
+    <string name="tv_se_14">• 信頼できない端末でログインしない</string>
+    <string name="tv_se_15">• 携帯番号とメールアドレスを最新に保つ</string>
+    <string name="tv_se_16">ログアウト</string>
+
+    <string name="tv_fo_1">パスワードをリセット</string>
+    <string name="tv_fo_2">メール認証コードでパスワードをリセットしてください</string>
+    <string name="tv_fo_3">メールアドレスを入力してください</string>
+    <string name="tv_fo_4">認証コードを入力してください</string>
+    <string name="tv_fo_5">認証コードを取得</string>
+    <string name="tv_fo_6">ログインパスワードを設定</string>
+    <string name="tv_fo_7">もう一度入力してください</string>
+    <string name="tv_fo_8">今すぐリセット</string>
+    <string name="tv_fo_9">パスワードを思い出した？今すぐログイン</string>
+
+    <string name="tv_settings_1">言語を選択</string>
+    <string name="tv_settings_2">私たちについて</string>
+
+    <string name="toast1">変更を確認</string>
+    <string name="toast2">本当に電話番号を変更しますか？</string>
+    <string name="toast3">確認</string>
+    <string name="toast4">キャンセル</string>
+    <string name="toast5">電話番号を入力してください</string>
+    <string name="toast6">変更を確認</string>
+    <string name="toast7">変更成功</string>
+    <string name="toast8">変更に失敗しました。もう一度お試しください</string>
+
+    <string name="tv_menu_1">ホーム</string>
+    <string name="tv_menu_2">観光スポット</string>
+    <string name="tv_menu_3">コミュニティ</string>
+    <string name="tv_menu_4">マイページ</string>
+
+    <string name="tv_search_1">検索</string>
+    <string name="tv_search_2">検索キーワードを入力</string>
+</resources>

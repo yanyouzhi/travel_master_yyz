@@ -2,25 +2,33 @@ package com.example.travel_master_yyz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.example.travel_master_yyz.adapter.MineDiaryAdapter;
 import com.example.travel_master_yyz.adapter.UserInfoDiaryAdapter;
 import com.example.travel_master_yyz.api.ApiService;
+import com.example.travel_master_yyz.api.BaseResponse;
 import com.example.travel_master_yyz.api.DiaryPost;
 import com.example.travel_master_yyz.api.MineDiaryResponse;
 import com.example.travel_master_yyz.api.RetrofitClient;
@@ -33,10 +41,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserInfoActivity extends AppCompatActivity {
+public class UserInfoActivity extends BaseActivity {
 
+    private static final int REQUEST_IMAGE_PICK = 1;
     String token,search_id,id;
-    TextView fa,name,desc,sex,job,location,phone,see;
+    TextView fa,name,desc,sex,job,location,phone,see,love;
     ImageView ava;
     RecyclerView recyclerView;
 
@@ -63,6 +72,7 @@ public class UserInfoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private void init(){
@@ -109,6 +119,7 @@ public class UserInfoActivity extends AppCompatActivity {
         });
     }
 
+
     private void loadUserInfo() {
         ApiService userApi = RetrofitClient.getInstance().create(ApiService.class);
         Call<UserResponse> call = userApi.getUserInfo(search_id, id, token);
@@ -131,19 +142,85 @@ public class UserInfoActivity extends AppCompatActivity {
         });
     }
 
+
+    private void unFollow() {
+        RetrofitClient.getInstance().create(ApiService.class)
+                .unFollow(token,search_id,id)
+                .enqueue(new Callback<BaseResponse>() {
+                    @Override
+                    public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
+                        if (response.body() != null && response.body().getCode() == 200) {
+                            fa.setText(getString(R.string.tv_userInfo_1));
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<BaseResponse> call, Throwable t) {
+                        Log.e("Error", "取消点赞失败：" + t.getMessage());
+                    }
+                });
+    }
+
+    private void addFollow() {
+        RetrofitClient.getInstance().create(ApiService.class)
+                .follow(token, search_id, id)
+                .enqueue(new Callback<BaseResponse>() {
+                    @Override
+                    public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
+                        if (response.body() != null && response.body().getCode() == 200) {
+                            fa.setText(getString(R.string.tv_userInfo_2));
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<BaseResponse> call, Throwable t) {
+                        Log.e("Error", "取消点赞失败：" + t.getMessage());
+                    }
+                });
+    }
+
     private void updateUI(UserResponse.UserData userData) {
         name.setText(userData.getName());
         desc.setText(userData.getDescription());
-        job.setText(userData.getOccupation());
-        location.setText(userData.getAddr());
-        sex.setText(userData.getSex() == 1 ? "男 | " : "女 | ");
+
+        if(!TextUtils.isEmpty(userData.getOccupation())){
+            job.setText("| " + userData.getOccupation());
+        }else{
+            job.setVisibility(View.GONE);
+        }
+
+        if(!TextUtils.isEmpty(userData.getAddr())){
+            location.setText(userData.getAddr());
+        }else{
+            location.setVisibility(View.GONE);
+        }
+        sex.setText(userData.getSex() == 1 ? getString(R.string.tv_edit_8) : getString(R.string.tv_edit_9));
         phone.setText(userData.getEmail());
+        fa.setText(userData.getCollect_my() == 0 ? getString(R.string.tv_userInfo_1) : getString(R.string.tv_userInfo_2));
+        if(id.equals(userData.getId())){
+            fa.setVisibility(View.GONE);
+        }else {
+            fa.setVisibility(View.VISIBLE);
+        }
+
+        fa.setOnClickListener(v -> {
+            if (userData.getCollect_my() == 0 ) {
+                addFollow();
+            } else {
+                unFollow();
+            }
+        });
 
         // 加载头像（Base64 转 Bitmap）
         if (userData.getPhoto() != null && !userData.getPhoto().isEmpty()) {
             Glide.with(this)
                     .load(userData.getPhoto())
                     .transform(new CircleCrop()) // 设置圆形
+                    .into(ava);
+        }else{
+            Glide.with(this)
+                    .load("https://yanyouzhi8758.oss-cn-guangzhou.aliyuncs.com/%E9%BB%91%E7%8C%AB.jpg")
+                    .transform(new CircleCrop())
                     .into(ava);
         }
     }

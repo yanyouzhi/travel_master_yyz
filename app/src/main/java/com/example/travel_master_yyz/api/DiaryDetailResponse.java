@@ -1,5 +1,7 @@
 package com.example.travel_master_yyz.api;
 
+import com.google.gson.annotations.SerializedName;
+
 public class DiaryDetailResponse {
     private int code;
     private String msg;
@@ -11,11 +13,18 @@ public class DiaryDetailResponse {
         private String time;
         private String image;
         private int praise;
+        private String id;
         private int comment;
+        @SerializedName("praise_my")
         private int praise_my;
+        private int praise_be;
 
         private String uid;
         private String photo;
+
+        public String getId() {
+            return id;
+        }
 
         public String getUid() {
             return uid;
@@ -27,6 +36,10 @@ public class DiaryDetailResponse {
 
         public int getPraise_my() {
             return praise_my;
+        }
+
+        public int getPraise_be() {
+            return praise_be;
         }
 
         public String getName() { return name; }

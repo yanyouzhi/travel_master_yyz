@@ -1,5 +1,6 @@
 package com.example.travel_master_yyz.page_fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,13 +11,19 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.travel_master_yyz.R;
+import com.example.travel_master_yyz.SearchActivity;
+import com.example.travel_master_yyz.adapter.CommunityPostAdapter;
 import com.example.travel_master_yyz.adapter.HomeLandscapeAdapter;
 import com.example.travel_master_yyz.adapter.ImageAdapter;
 import com.example.travel_master_yyz.adapter.LandscapeAdapter;
 import com.example.travel_master_yyz.api.ApiService;
+import com.example.travel_master_yyz.api.BaseResponse;
+import com.example.travel_master_yyz.api.CommunityHomePost;
+import com.example.travel_master_yyz.api.CommunityResponse;
 import com.example.travel_master_yyz.api.LandscapeResponse;
 import com.example.travel_master_yyz.api.RetrofitClient;
 import com.example.travel_master_yyz.dao.DataBean;
@@ -35,8 +42,9 @@ public class HomeFragment extends Fragment {
     private Banner banner;
     private View view;
 
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView,recyclerView2;
     private HomeLandscapeAdapter adapter;
+    private CommunityPostAdapter adapter1;
     private String token,id;
 
     @Override
@@ -46,6 +54,8 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home, container, false);
         banner = view.findViewById(R.id.banner);
         ImageAdapter imageAdapter = new ImageAdapter(DataBean.getTestData2());
+        recyclerView2 = view.findViewById(R.id.re1);
+
         banner.setAdapter(imageAdapter)
                 .addBannerLifecycleObserver(getActivity())
                 .setIndicator(new CircleIndicator(getActivity()));
@@ -56,8 +66,46 @@ public class HomeFragment extends Fragment {
         token = sessionManager.getToken();
         id = sessionManager.getId();
         loadLandscapes();
+        setupRecyclerView();
+        loadCommunityPosts();
+
+        ImageView search = view.findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
+    }
+
+    private void setupRecyclerView() {
+        adapter1 = new CommunityPostAdapter(getContext());
+        StaggeredGridLayoutManager layoutManager =
+                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        recyclerView2.setLayoutManager(layoutManager);
+        recyclerView2.setAdapter(adapter1);
+    }
+
+    private void loadCommunityPosts() {
+        ApiService apiService = RetrofitClient.getInstance().create(ApiService.class);
+        Call<BaseResponse<List<CommunityHomePost>>> call = apiService.getRandomCommunityList(token, id);
+
+        call.enqueue(new Callback<BaseResponse<List<CommunityHomePost>>>() {
+            @Override
+            public void onResponse(Call<BaseResponse<List<CommunityHomePost>>> call, Response<BaseResponse<List<CommunityHomePost>>> response) {
+                if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
+                    adapter1.setData(response.body().getData());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<BaseResponse<List<CommunityHomePost>>> call, Throwable t) {
+                Toast.makeText(getContext(), "网络错误：" + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void loadLandscapes() {

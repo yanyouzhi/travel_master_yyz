@@ -19,6 +19,17 @@ public class SessionManager {
         editor = sharedPreferences.edit();
     }
 
+    private static final String KEY_LANGUAGE = "app_language";
+
+    public void saveLanguage(String languageCode) {
+        editor.putString(KEY_LANGUAGE, languageCode);
+        editor.apply();
+    }
+
+    public String getLanguage() {
+        return sharedPreferences.getString(KEY_LANGUAGE, "zh"); // 默认返回中文
+    }
+
     public void saveUserSession(String id, String uid, String token) {
         editor.putString(KEY_ID, id);
         editor.putString(KEY_UID, uid);

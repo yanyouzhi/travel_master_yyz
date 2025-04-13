@@ -1,0 +1,112 @@
+<resources>
+    <string name="app_name">红色印记</string>
+
+    <string name="tv_help">帮助与反馈</string>
+    <string name="tv_help_1">联系我们</string>
+    <string name="tv_help_2">如有任何问题或建议，欢迎通过下方联系方式联系我们的制作团队，我们将竭诚为您服务</string>
+    <string name="tv_help_3">邮箱：852849843@qq.com</string>
+    <string name="tv_help_4">手机：13660308758</string>
+    <string name="tv_help_5">关于我们</string>
+    <string name="tv_help_6">一款数字化的红色文化社交旅游app，通过推荐红色文化景点和社交互动功能弘扬红色景点文化</string>
+    <string name="tv_help_7">版本号：1.0.0</string>
+    <string name="tv_help_8">应用源码</string>
+
+    <string name="tv_mine_1">编辑资料</string>
+    <string name="tv_mine_2">收藏的景点</string>
+    <string name="tv_mine_3">收藏景点情况</string>
+    <string name="tv_mine_4">用户关系</string>
+    <string name="tv_mine_5">用户关系情况</string>
+    <string name="tv_mine_6">我的动态</string>
+    <string name="tv_mine_7">查看全部动态</string>
+    <string name="tv_mine_8">账号安全</string>
+    <string name="tv_mine_9">帮助与反馈</string>
+    <string name="tv_mine_10">系统设置</string>
+    <string name="tv_mine_11">历史查询</string>
+    <string name="tv_mine_12">景点查询历史</string>
+
+    <string name="tv_userlist_1">我关注的</string>
+    <string name="tv_userlist_2">关注我的</string>
+
+    <string name="tv_diray_list">动态列表</string>
+
+    <string name="tv_edit_1">昵称</string>
+    <string name="tv_edit_2">性别</string>
+    <string name="tv_edit_3">签名</string>
+    <string name="tv_edit_4">职业身份</string>
+    <string name="tv_edit_5">所在地</string>
+    <string name="tv_edit_6">联系方式</string>
+    <string name="tv_edit_7">保存</string>
+    <string name="tv_edit_8">男</string>
+    <string name="tv_edit_9">女</string>
+
+    <string name="tv_diary_detail_1">动态详情</string>
+    <string name="tv_diary_detail_2">全部评论</string>
+    <string name="tv_diary_detail_3">说点什么...</string>
+    <string name="tv_diary_detail_4">发送</string>
+    <string name="tv_diary_detail_5">到底了哦</string>
+
+    <string name="tv_userInfo_1">关注</string>
+    <string name="tv_userInfo_2">已关注</string>
+    <string name="tv_userInfo_3">Ta的动态</string>
+    <string name="tv_userInfo_4">全部动态</string>
+
+    <string name="tv_post_1">取消</string>
+    <string name="tv_post_2">图文</string>
+    <string name="tv_post_3">发布</string>
+    <string name="tv_post_4">分享你的想法</string>
+    <string name="tv_post_5">同时分享到社区</string>
+
+    <string name="tv_landscape_1">景点详情</string>
+    <string name="tv_landscape_2">收藏</string>
+    <string name="tv_landscape_3">已收藏</string>
+    <string name="tv_landscape_4">提交评分</string>
+    <string name="tv_landscape_5">分</string>
+
+    <string name="tv_se_1">账号安全</string>
+    <string name="tv_se_2">登录密码</string>
+    <string name="tv_se_3">建议定期更换密码</string>
+    <string name="tv_se_4">修改</string>
+    <string name="tv_se_5">手机号码</string>
+    <string name="tv_se_6">更换</string>
+    <string name="tv_se_7">邮箱账号</string>
+    <string name="tv_se_8">安全提示</string>
+    <string name="tv_se_9">上次登录时间</string>
+    <string name="tv_se_10">账号安全状态：安全</string>
+    <string name="tv_se_11">安全建议</string>
+    <string name="tv_se_12">• 定期更换登录密码，提高账号安全性</string>
+    <string name="tv_se_13">• 开启双重认证，增加账号保护</string>
+    <string name="tv_se_14">• 不要在不信任的设备上登录账号</string>
+    <string name="tv_se_15">• 保持手机号和邮箱的有效性</string>
+    <string name="tv_se_16">退出登录</string>
+
+    <string name="tv_fo_1">重置密码</string>
+    <string name="tv_fo_2">请通过邮箱验证码重置密码</string>
+    <string name="tv_fo_3">请输入电子邮箱</string>
+    <string name="tv_fo_4">请输入验证码</string>
+    <string name="tv_fo_5">获取验证码</string>
+    <string name="tv_fo_6">请设置登录密码</string>
+    <string name="tv_fo_7">请再次输入密码</string>
+    <string name="tv_fo_8">立即重置</string>
+    <string name="tv_fo_9">记起密码了？ 立即登录</string>
+
+    <string name="tv_settings_1">选择语言</string>
+    <string name="tv_settings_2">关于我们</string>
+
+    <string name="toast1">确认修改</string>
+    <string name="toast2">确认要修改手机号吗</string>
+    <string name="toast3">确定</string>
+    <string name="toast4">取消</string>
+    <string name="toast5">请输入手机号</string>
+    <string name="toast6">确认修改</string>
+    <string name="toast7">修改成功</string>
+    <string name="toast8">修改失败，请重试</string>
+
+    <string name="tv_menu_1">首页</string>
+    <string name="tv_menu_2">景点</string>
+    <string name="tv_menu_3">社区</string>
+    <string name="tv_menu_4">我的</string>
+
+    <string name="tv_search_1">搜索</string>
+    <string name="tv_search_2">请输入需要查询的内容</string>
+
+</resources>

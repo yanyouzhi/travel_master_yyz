@@ -22,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ForgetPasswordActivity extends AppCompatActivity {
+public class ForgetPasswordActivity extends BaseActivity {
 
     private TextInputEditText inputEmail, inputVerificationCode, inputPassword, inputConfirmPassword;
     private TextInputLayout tilPasswordLayout, tilConfirmPasswordLayout;

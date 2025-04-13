@@ -49,6 +49,11 @@ public class LandscapeCommentAdapter extends RecyclerView.Adapter<LandscapeComme
                     .load(comment.getPhoto())
                     .transform(new CircleCrop()) // 设置圆形
                     .into(holder.ava);
+        }else{
+            Glide.with(context)
+                    .load("https://yanyouzhi8758.oss-cn-guangzhou.aliyuncs.com/%E9%BB%91%E7%8C%AB.jpg")
+                    .transform(new CircleCrop())
+                    .into(holder.ava);
         }
 
         holder.itemView.setOnClickListener(v -> {

@@ -3,6 +3,8 @@ package com.example.travel_master_yyz.api;
 import com.example.travel_master_yyz.model_mvvm.CommunityResponse;
 import com.google.gson.JsonObject;
 
+import java.util.List;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -20,6 +22,12 @@ public interface ApiService {
     // 注册用户
     @POST("login/signup")
     Call<ApiResponse> registerUser(@Body RegisterRequest request);
+
+    @GET("/diary/selectRandomCommunityList")
+    Call<BaseResponse<List<CommunityHomePost>>> getRandomCommunityList(
+            @Header("token") String token,
+            @Query("uid") String uid
+    );
 
 
     // 重置密码
@@ -98,6 +106,30 @@ public interface ApiService {
             @Query("fid") String fid
     );
 
+    @GET("user/selectPageCollect")
+    Call<FollowDataResponse> getFollowedPosts(
+            @Header("TOKEN") String token,
+            @Query("uid") String uid,
+            @Query("page") int page,
+            @Query("limit") int limit
+    );
+
+    @GET("landscape/selectPageCollect")
+    Call<CollectResponse> getCollectList(
+            @Header("TOKEN") String token,
+            @Query("page") String page,
+            @Query("limit") String limit,
+            @Query("uid") String uid
+    );
+
+    @GET("user/selectPageFan")
+    Call<FollowDataResponse> getFollow(
+            @Header("TOKEN") String token,
+            @Query("uid") String uid,
+            @Query("page") int page,
+            @Query("limit") int limit
+    );
+
         @POST("diary/addComment")
         Call<BaseResponse> postComment(
                 @Header("TOKEN") String token,
@@ -120,12 +152,36 @@ public interface ApiService {
             @Query("fid") String fid
     );
 
+    @POST("user/follow")
+    Call<BaseResponse> follow(
+            @Header("TOKEN") String token,
+            @Query("uid") String uid,
+            @Query("fid") String fid
+    );
+
+    @POST("user/unfollow")
+    Call<BaseResponse> unFollow(
+            @Header("TOKEN") String token,
+            @Query("uid") String uid,
+            @Query("fid") String fid
+    );
+
     @GET("landscape/selectPage")
     Call<LandscapeResponse> getLandscapes(
             @Header("TOKEN") String token,
             @Query("page") String page,
             @Query("limit") String limit,
             @Query("uid") String uid,
+            @Query("sort") String sort
+    );
+
+    @GET("landscape/selectPage")
+    Call<LandscapeResponse> getLandscapesSearch(
+            @Header("TOKEN") String token,
+            @Query("page") String page,
+            @Query("limit") String limit,
+            @Query("uid") String uid,
+            @Query("keyword") String keyword,
             @Query("sort") String sort
     );
 
@@ -187,6 +243,12 @@ public interface ApiService {
             @Query("uid") String uid,
             @Query("fid") String fid,
             @Header("TOKEN") String token
+    );
+
+    @GET("diary/delete")
+    Call<BaseResponse> delDiary(
+            @Header("TOKEN") String token,
+            @Query("fid") String fid
     );
 
     @GET("/user/selectData")

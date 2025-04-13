@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">Red Imprint</string>
+
+    <string name="tv_help">Help And Feedback</string>
+    <string name="tv_help_1">Contact Us</string>
+    <string name="tv_help_2">If you have any questions or suggestions, feel free to contact our team using the information below. We are here to help.</string>
+    <string name="tv_help_3">Email: 852849843@qq.com</string>
+    <string name="tv_help_4">Phone: 13660308758</string>
+    <string name="tv_help_5">About Us</string>
+    <string name="tv_help_6">A digital social travel app for red culture, promoting red cultural sites through recommendations and social interaction features</string>
+    <string name="tv_help_7">Version: 1.0.0</string>
+    <string name="tv_help_8">Source Code</string>
+
+    <string name="tv_mine_1">Edit Profile</string>
+    <string name="tv_mine_2">Favorite Spots</string>
+    <string name="tv_mine_3">Collected Spots</string>
+    <string name="tv_mine_4">User Relationships</string>
+    <string name="tv_mine_5">Relationship Details</string>
+    <string name="tv_mine_6">My Posts</string>
+    <string name="tv_mine_7">View All Posts</string>
+    <string name="tv_mine_8">Account Security</string>
+    <string name="tv_mine_9">Help And Feedback</string>
+    <string name="tv_mine_10">System Settings</string>
+    <string name="tv_mine_11">Search History</string>
+    <string name="tv_mine_12">Attraction Search History</string>
+
+    <string name="tv_userlist_1">Following</string>
+    <string name="tv_userlist_2">Followers</string>
+
+    <string name="tv_diray_list">Post List</string>
+
+    <string name="tv_edit_1">Nickname</string>
+    <string name="tv_edit_2">Gender</string>
+    <string name="tv_edit_3">Signature</string>
+    <string name="tv_edit_4">Occupation</string>
+    <string name="tv_edit_5">Location</string>
+    <string name="tv_edit_6">Contact</string>
+    <string name="tv_edit_7">Save</string>
+    <string name="tv_edit_8">Male</string>
+    <string name="tv_edit_9">Female</string>
+
+    <string name="tv_diary_detail_1">Post Details</string>
+    <string name="tv_diary_detail_2">All Comments</string>
+    <string name="tv_diary_detail_3">Say something...</string>
+    <string name="tv_diary_detail_4">Send</string>
+    <string name="tv_diary_detail_5">No more content</string>
+
+    <string name="tv_userInfo_1">Follow</string>
+    <string name="tv_userInfo_2">Following</string>
+    <string name="tv_userInfo_3">Their Posts</string>
+    <string name="tv_userInfo_4">All Posts</string>
+
+    <string name="tv_post_1">Cancel</string>
+    <string name="tv_post_2">Photo And Text</string>
+    <string name="tv_post_3">Post</string>
+    <string name="tv_post_4">Share your thoughts</string>
+    <string name="tv_post_5">Also share to community</string>
+
+    <string name="tv_landscape_1">Spot Details</string>
+    <string name="tv_landscape_2">Favorite</string>
+    <string name="tv_landscape_3">Favorited</string>
+    <string name="tv_landscape_4">Submit Rating</string>
+    <string name="tv_landscape_5">Score</string>
+
+    <string name="tv_se_1">Account Security</string>
+    <string name="tv_se_2">Login Password</string>
+    <string name="tv_se_3">It is recommended to change your password regularly</string>
+    <string name="tv_se_4">Edit</string>
+    <string name="tv_se_5">Phone Number</string>
+    <string name="tv_se_6">Change</string>
+    <string name="tv_se_7">Email Account</string>
+    <string name="tv_se_8">Security Tips</string>
+    <string name="tv_se_9">Last Login Time</string>
+    <string name="tv_se_10">Security Status: Safe</string>
+    <string name="tv_se_11">Security Suggestions</string>
+    <string name="tv_se_12">• Change your password regularly to enhance security</string>
+    <string name="tv_se_13">• Enable two-factor authentication</string>
+    <string name="tv_se_14">• Avoid logging in on untrusted devices</string>
+    <string name="tv_se_15">• Keep your phone and email up to date</string>
+    <string name="tv_se_16">Log Out</string>
+
+    <string name="tv_fo_1">Reset Password</string>
+    <string name="tv_fo_2">Please reset your password using the email verification code</string>
+    <string name="tv_fo_3">Enter your email</string>
+    <string name="tv_fo_4">Enter the code</string>
+    <string name="tv_fo_5">Get Code</string>
+    <string name="tv_fo_6">Set a password</string>
+    <string name="tv_fo_7">Confirm password</string>
+    <string name="tv_fo_8">Reset Now</string>
+    <string name="tv_fo_9">Remember your password? Log in now</string>
+
+    <string name="tv_settings_1">Select Language</string>
+    <string name="tv_settings_2">About Us</string>
+
+    <string name="toast1">Confirm changes</string>
+    <string name="toast2">Are you sure you want to change the phone number?</string>
+    <string name="toast3">Confirm</string>
+    <string name="toast4">Cancel</string>
+    <string name="toast5">Please enter your phone number</string>
+    <string name="toast6">Confirm changes</string>
+    <string name="toast7">Successfully updated</string>
+    <string name="toast8">Update failed, please try again</string>
+
+    <string name="tv_menu_1">Home</string>
+    <string name="tv_menu_2">Attractions</string>
+    <string name="tv_menu_3">Community</string>
+    <string name="tv_menu_4">Profile</string>
+
+    <string name="tv_search_1">Search</string>
+    <string name="tv_search_2">Enter keywords to search</string>
+</resources>

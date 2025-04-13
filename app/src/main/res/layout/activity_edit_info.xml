@@ -18,7 +18,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:background="@color/red"
         android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,9 +33,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="编辑资料"
+            android:text="@string/tv_mine_1"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
@@ -71,7 +71,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="昵称" />
+                    android:text="@string/tv_edit_1" />
 
                 <EditText
                     android:id="@+id/edt_userName"
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="性别" />
+                    android:text="@string/tv_edit_2" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -111,7 +111,7 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:paddingVertical="5dp"
-                        android:text="男"
+                        android:text="@string/tv_edit_8"
                         android:textAlignment="center" />
 
                     <TextView
@@ -124,7 +124,7 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:paddingVertical="5dp"
-                        android:text="女"
+                        android:text="@string/tv_edit_9"
                         android:textAlignment="center" />
 
 
@@ -139,7 +139,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="签名" />
+                        android:text="@string/tv_edit_3" />
 
                     <EditText
                         android:id="@+id/edt_desc"
@@ -162,7 +162,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="职业身份" />
+                        android:text="@string/tv_edit_4" />
 
                     <EditText
                         android:id="@+id/edt_job"
@@ -185,7 +185,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="所在地" />
+                        android:text="@string/tv_edit_5" />
 
                     <EditText
                         android:id="@+id/edt_locate"
@@ -208,7 +208,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="联系方式" />
+                        android:text="@string/tv_edit_6" />
 
                     <EditText
                         android:id="@+id/edt_phone"
@@ -236,7 +236,7 @@
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="保存"
+        android:text="@string/tv_edit_7"
         android:textSize="18sp"
         android:textColor="@color/white"
         android:background="@color/red"

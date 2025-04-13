@@ -15,7 +15,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:background="@color/white"
             android:elevation="4dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="账号安全"
+                android:text="@string/tv_se_1"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="@color/black" />
@@ -54,7 +54,7 @@
                     android:textSize="18dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="登录密码"/>
+                    android:text="@string/tv_se_2"/>
 
                 <TextView
                     android:layout_marginTop="5dp"
@@ -62,7 +62,7 @@
                     android:textSize="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="建议定期更换密码"/>
+                    android:text="@string/tv_se_3"/>
 
             </LinearLayout>
 
@@ -81,7 +81,7 @@
                     android:textSize="17dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="修改"/>
+                    android:text="@string/tv_se_4"/>
 
                 <ImageView
                     android:layout_marginTop="2.5dp"
@@ -112,7 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="手机号码"
+                    android:text="@string/tv_se_5"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="更换"
+                    android:text="@string/tv_se_6"
                     android:textColor="@color/blue_click"
                     android:textSize="17dp" />
 
@@ -177,7 +177,7 @@
                     android:textSize="18dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="邮箱账号"/>
+                    android:text="@string/tv_se_7"/>
 
                 <TextView
                     android:id="@+id/tv_email"
@@ -205,7 +205,7 @@
                     android:textSize="17dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="更换"/>
+                    android:text="@string/tv_se_6"/>
 
                 <ImageView
                     android:layout_marginTop="2.5dp"
@@ -247,7 +247,7 @@
                     android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="安全提示"
+                    android:text="@string/tv_se_8"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 
@@ -255,14 +255,14 @@
                     android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="上次登录时间：2024 年 1 月 15 日 14:30"
+                    android:text="@string/tv_se_9"
                     android:textSize="14sp"
                     android:paddingTop="4dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="账号安全状态：正常"
+                    android:text="@string/tv_se_10"
                     android:textSize="14sp"
                     android:paddingTop="2dp"/>
             </LinearLayout>
@@ -298,35 +298,35 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="安全建议"
+                    android:text="@string/tv_se_11"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="• 定期更换登录密码，提高账号安全性"
+                    android:text="@string/tv_se_12"
                     android:textSize="14sp"
                     android:paddingTop="4dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="• 开启双重认证，增加账号保护"
+                    android:text="@string/tv_se_13"
                     android:textSize="14sp"
                     android:paddingTop="4dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="• 不要在不信任的设备上登录账号"
+                    android:text="@string/tv_se_14"
                     android:textSize="14sp"
                     android:paddingTop="4dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="• 保持手机号和邮箱的有效性"
+                    android:text="@string/tv_se_15"
                     android:textSize="14sp"
                     android:paddingTop="4dp"/>
             </LinearLayout>
@@ -343,7 +343,7 @@
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="退出登录"/>
+            android:text="@string/tv_se_16"/>
 
     </LinearLayout>
 

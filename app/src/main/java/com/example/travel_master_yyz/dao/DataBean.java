@@ -38,9 +38,9 @@ public class DataBean {
 
     public static List<DataBean> getTestData2() {
         List<DataBean> list = new ArrayList<>();
-        list.add(new DataBean(R.drawable.b_1, null, 3));
-        list.add(new DataBean(R.drawable.b_2,null, 1));
-        list.add(new DataBean(R.drawable.b_3,null, 3));
+        list.add(new DataBean(R.drawable.b_1, "北国风光，万里雪飘", 3));
+        list.add(new DataBean(R.drawable.b_2,"锦绣山河", 1));
+        list.add(new DataBean(R.drawable.b_3,"睹一睹古都的风采", 3));
         return list;
     }
 

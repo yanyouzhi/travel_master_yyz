@@ -43,7 +43,7 @@ public class LandscapeAdapter extends RecyclerView.Adapter<LandscapeAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         LandscapeResponse.Landscape landscape = landscapeList.get(position);
         holder.name.setText(landscape.getName());
-        holder.score.setText(String.format("%.1f 分", landscape.getAverageScore()));
+        holder.score.setText(String.format("%.1f "+ context.getString(R.string.tv_landscape_5), landscape.getAverageScore()));
         holder.description.setText(landscape.getDescription().length() > 50 ?
                 landscape.getDescription().substring(0, 50) + "..." : landscape.getDescription());
         holder.praise.setText(String.valueOf(landscape.getPraise()));

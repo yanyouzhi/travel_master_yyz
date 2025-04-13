@@ -56,8 +56,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
                     .load(comment.getPhoto())
                     .transform(new CircleCrop()) // 设置圆形
                     .into(holder.img);
-        } else {
-            holder.img.setVisibility(View.VISIBLE);
+        } else{
+            Glide.with(context)
+                    .load("https://yanyouzhi8758.oss-cn-guangzhou.aliyuncs.com/%E9%BB%91%E7%8C%AB.jpg")
+                    .transform(new CircleCrop())
+                    .into(holder.img);
         }
 
         holder.itemView.setOnClickListener(v -> {

@@ -21,7 +21,7 @@
             android:id="@+id/tv_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="取消"
+            android:text="@string/tv_post_1"
             android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@color/gray"/>
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="图文"
+            android:text="@string/tv_post_2"
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="@color/red" />
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="发布"
+            android:text="@string/tv_post_3"
             android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@android:color/holo_red_light" />
@@ -54,7 +54,7 @@
         android:id="@+id/et_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="分享你的想法..."
+        android:hint="@string/tv_post_4"
         android:textSize="16sp"
         android:padding="10dp"
         android:background="@android:color/transparent"/>
@@ -67,7 +67,7 @@
         android:id="@+id/cb_share_community"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="同时分享到社区"/>
+        android:text="@string/tv_post_5"/>
     <!-- 选择图片 -->
     <LinearLayout
         android:layout_marginTop="10dp"

@@ -3,20 +3,20 @@
         android:id="@+id/nav_home"
         android:icon="@drawable/baseline_home_24_unclick"
         android:iconTint="@color/nav_item_selector"
-        android:title="首页"/>
+        android:title="@string/tv_menu_1"/>
     <item
         android:id="@+id/nav_spots"
         android:iconTint="@color/nav_item_selector"
         android:icon="@drawable/baseline_account_balance_24_unclick"
-        android:title="景点"/>
+        android:title="@string/tv_menu_2"/>
     <item
         android:id="@+id/nav_community"
         android:iconTint="@color/nav_item_selector"
         android:icon="@drawable/baseline_groups_24_unclick"
-        android:title="社区"/>
+        android:title="@string/tv_menu_3"/>
     <item
         android:id="@+id/nav_mine"
         android:iconTint="@color/nav_item_selector"
         android:icon="@drawable/baseline_person_24_unclick"
-        android:title="我的"/>
+        android:title="@string/tv_menu_4"/>
 </menu>

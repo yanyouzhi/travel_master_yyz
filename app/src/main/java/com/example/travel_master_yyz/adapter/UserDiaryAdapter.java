@@ -76,13 +76,16 @@ public class UserDiaryAdapter extends RecyclerView.Adapter<UserDiaryAdapter.View
                     .load(diary.getPhoto())
                     .transform(new CircleCrop()) // 设置圆形
                     .into(holder.avaImage);
-        } else {
-            holder.avaImage.setVisibility(View.VISIBLE);
+        } else{
+            Glide.with(context)
+                    .load("https://yanyouzhi8758.oss-cn-guangzhou.aliyuncs.com/%E9%BB%91%E7%8C%AB.jpg")
+                    .transform(new CircleCrop())
+                    .into(holder.avaImage);
         }
 
         // 处理点赞状态
-        isLiked = diary.getPraise_my()> 0; // 获取点赞状态（0 = 未点赞，>0 = 已点赞）
-        holder.imgLike.setSelected(isLiked);
+        isLiked = diary.getPraise_be()> 0; // 获取点赞状态（0 = 未点赞，>0 = 已点赞）
+        holder.imgLike.setSelected(false);
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DiaryDetailActivity.class);
@@ -91,13 +94,13 @@ public class UserDiaryAdapter extends RecyclerView.Adapter<UserDiaryAdapter.View
             context.startActivity(intent);
         });
 
-        holder.imgLike.setOnClickListener(v -> {
+        /*holder.imgLike.setOnClickListener(v -> {
             if (isLiked) {
                 cancelLike(diary.getUid(),diary.getId(),holder);
             } else {
                 addLike(diary.getUid(),diary.getId(),holder);
             }
-        });
+        });*/
     }
 
     @Override

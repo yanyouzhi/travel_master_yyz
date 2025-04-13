@@ -20,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ChangeEmailActivity extends AppCompatActivity {
+public class ChangeEmailActivity extends BaseActivity {
 
     EditText editText;
     TextView textView;
@@ -43,10 +43,10 @@ public class ChangeEmailActivity extends AppCompatActivity {
     // todo:显示确认弹窗
     private void showConfirmDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("确认修改")
-                .setMessage("你确定要修改手机号吗？")
-                .setPositiveButton("确定", (dialog, which) -> editEmail())
-                .setNegativeButton("取消", null)
+                .setTitle(getString(R.string.toast1))
+                .setMessage(getString(R.string.toast2))
+                .setPositiveButton(getString(R.string.toast3), (dialog, which) -> editEmail())
+                .setNegativeButton(getString(R.string.toast4), null)
                 .show();
     }
 
@@ -54,7 +54,7 @@ public class ChangeEmailActivity extends AppCompatActivity {
     private void editEmail() {
         String newPhone = editText.getText().toString().trim();
         if (TextUtils.isEmpty(newPhone)) {
-            Toast.makeText(this, "请输入手机号", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.toast6), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -71,10 +71,10 @@ public class ChangeEmailActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().getCode() == 200) {
-                    Toast.makeText(ChangeEmailActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChangeEmailActivity.this, getString(R.string.toast7), Toast.LENGTH_SHORT).show();
                     finish();
                 } else {
-                    Toast.makeText(ChangeEmailActivity.this, "修改失败，请重试", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChangeEmailActivity.this, getString(R.string.toast8), Toast.LENGTH_SHORT).show();
                 }
             }
 

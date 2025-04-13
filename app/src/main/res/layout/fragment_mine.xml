@@ -49,7 +49,7 @@
                     android:textColor="#03D8F4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="编辑资料"/>
+                    android:text="@string/tv_mine_1"/>
 
                 <ImageView
                     android:id="@+id/iv_avatar"
@@ -181,7 +181,7 @@
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="收藏的景点"/>
+                    android:text="@string/tv_mine_2"/>
 
                 <TextView
                     android:id="@+id/tv_collect_num"
@@ -190,7 +190,7 @@
                     android:textColor="@color/gray"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="已收藏x个景点"/>
+                    android:text="@string/tv_mine_3"/>
             </LinearLayout>
 
             <LinearLayout
@@ -215,7 +215,7 @@
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="关注用户"/>
+                    android:text="@string/tv_mine_4"/>
 
                 <TextView
                     android:id="@+id/tv_favor_user_num"
@@ -224,11 +224,11 @@
                     android:textColor="@color/gray"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="已关注x个用户"/>
+                    android:text="@string/tv_mine_5"/>
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/location"
+                android:id="@+id/history"
                 android:paddingVertical="10dp"
                 android:paddingHorizontal="10dp"
                 android:background="@drawable/bg_setting"
@@ -238,7 +238,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/baseline_location_on_24"
+                    android:src="@drawable/baseline_history_24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -248,7 +248,7 @@
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="定位"/>
+                    android:text="@string/tv_mine_11"/>
 
                 <TextView
                     android:layout_marginBottom="10dp"
@@ -256,7 +256,7 @@
                     android:textColor="@color/gray"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="查看距离"/>
+                    android:text="@string/tv_mine_12"/>
             </LinearLayout>
 
 
@@ -284,7 +284,7 @@
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="我的动态"/>
+                    android:text="@string/tv_mine_6"/>
 
                 <TextView
                     android:id="@+id/tv_seeDiary"
@@ -293,7 +293,7 @@
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="查看全部动态"/>
+                    android:text="@string/tv_mine_7"/>
 
             </FrameLayout>
 
@@ -315,6 +315,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:paddingVertical="10dp"
                 android:id="@+id/tv_account_security"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -331,7 +332,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="12dp"
-                    android:text="账号安全"
+                    android:text="@string/tv_mine_8"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -343,6 +344,7 @@
                 android:layout_height="0.05dp"/>
 
             <LinearLayout
+                android:paddingVertical="10dp"
                 android:id="@+id/tv_feedback"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -358,7 +360,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="帮助与反馈"
+                    android:text="@string/tv_mine_9"
                     android:padding="12dp"
                     android:textSize="14sp" />
 
@@ -370,6 +372,7 @@
                 android:layout_height="0.05dp"/>
 
             <LinearLayout
+                android:paddingVertical="10dp"
                 android:id="@+id/tv_settings"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -385,7 +388,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="系统设置"
+                    android:text="@string/tv_mine_10"
                     android:padding="12dp"
                     android:textSize="14sp" />
 

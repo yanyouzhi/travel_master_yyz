@@ -46,6 +46,7 @@ public class NewCommunityResponse {
         private int comment_my;
         private int community;
         private int praise_my;
+        private int praise_be;
         private int praise;
         private String occupation;
         private String photo;
@@ -54,6 +55,10 @@ public class NewCommunityResponse {
         // Getters and Setters
         public String getUid() {
             return uid;
+        }
+
+        public int getPraise_be() {
+            return praise_be;
         }
 
         public void setUid(String uid) {

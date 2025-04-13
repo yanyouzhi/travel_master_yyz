@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.example.travel_master_yyz.page_fragment.HomePageViewPagerAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     private ViewPager2 viewPager;
     private BottomNavigationView bottomNavigationView;
