@@ -25,7 +25,6 @@ public class CommunityViewModel extends ViewModel {
     private MutableLiveData<List<NewCommunityResponse.NewCommunityPost>> diaryPosts = new MutableLiveData<>();
     private MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
     private MutableLiveData<Boolean> refreshDataTrigger = new MutableLiveData<>();
-
     private ApiService apiService;
 
     public CommunityViewModel() {
